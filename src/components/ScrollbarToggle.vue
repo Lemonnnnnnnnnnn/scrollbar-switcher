@@ -46,7 +46,7 @@ onUnmounted(() => {
 })
 </script>
 
-<style scoped module>
+<style scoped>
 .scrollbar-toggle-container {
   position: fixed;
   bottom: 20px;

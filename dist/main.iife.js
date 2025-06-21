@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         Scrollbar Switcher
+// @namespace    http://tampermonkey.net/
 // @version      1.0.0
 // @description  Toggle webpage scrollbar visibility with a floating button
 // @author       Your Name
@@ -17,7 +18,7 @@ var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "sy
 (function() {
   "use strict";
   var __vite_style__ = document.createElement("style");
-  __vite_style__.textContent = "\n._scrollbar-toggle-container_1s5zx_3[data-v-ac3b82da] {\r\n  position: fixed;\r\n  bottom: 20px;\r\n  right: 20px;\r\n  z-index: 999999;\r\n  pointer-events: auto;\n}\n._scrollbar-toggle-btn_1s5zx_19[data-v-ac3b82da] {\r\n  width: 50px;\r\n  height: 50px;\r\n  border-radius: 50%;\r\n  border: none;\r\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\r\n  color: white;\r\n  cursor: pointer;\r\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\r\n  transition: all 0.3s ease;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 0;\n}\n._scrollbar-toggle-btn_1s5zx_19[data-v-ac3b82da]:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);\r\n  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);\n}\n._scrollbar-toggle-btn_1s5zx_19[data-v-ac3b82da]:active {\r\n  transform: translateY(0);\r\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n}\n._scrollbar-toggle-btn_1s5zx_19._hidden_1s5zx_73[data-v-ac3b82da] {\r\n  background: linear-gradient(135deg, #f56565 0%, #c53030 100%);\n}\n._scrollbar-toggle-btn_1s5zx_19._hidden_1s5zx_73[data-v-ac3b82da]:hover {\r\n  background: linear-gradient(135deg, #e53e3e 0%, #9c2626 100%);\n}\n._icon_1s5zx_89[data-v-ac3b82da] {\r\n  width: 24px;\r\n  height: 24px;\r\n  stroke-width: 2;\n}\r\n\r\n/* 响应式设计 */\n@media (max-width: 768px) {\n._scrollbar-toggle-container_1s5zx_3[data-v-ac3b82da] {\r\n    bottom: 15px;\r\n    right: 15px;\n}\n._scrollbar-toggle-btn_1s5zx_19[data-v-ac3b82da] {\r\n    width: 45px;\r\n    height: 45px;\n}\n._icon_1s5zx_89[data-v-ac3b82da] {\r\n    width: 20px;\r\n    height: 20px;\n}\n}\r\n\r\n/* 确保按钮在所有页面都可见 */\n._scrollbar-toggle-btn_1s5zx_19[data-v-ac3b82da] {\r\n  backdrop-filter: blur(10px);\r\n  -webkit-backdrop-filter: blur(10px);\n}\r\n/*$vite$:1*/";
+  __vite_style__.textContent = "\n.scrollbar-toggle-container[data-v-90c9a322] {\r\n  position: fixed;\r\n  bottom: 20px;\r\n  right: 20px;\r\n  z-index: 999999;\r\n  pointer-events: auto;\n}\n.scrollbar-toggle-btn[data-v-90c9a322] {\r\n  width: 50px;\r\n  height: 50px;\r\n  border-radius: 50%;\r\n  border: none;\r\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\r\n  color: white;\r\n  cursor: pointer;\r\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\r\n  transition: all 0.3s ease;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 0;\n}\n.scrollbar-toggle-btn[data-v-90c9a322]:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);\r\n  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);\n}\n.scrollbar-toggle-btn[data-v-90c9a322]:active {\r\n  transform: translateY(0);\r\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n}\n.scrollbar-toggle-btn.hidden[data-v-90c9a322] {\r\n  background: linear-gradient(135deg, #f56565 0%, #c53030 100%);\n}\n.scrollbar-toggle-btn.hidden[data-v-90c9a322]:hover {\r\n  background: linear-gradient(135deg, #e53e3e 0%, #9c2626 100%);\n}\n.icon[data-v-90c9a322] {\r\n  width: 24px;\r\n  height: 24px;\r\n  stroke-width: 2;\n}\r\n\r\n/* 响应式设计 */\n@media (max-width: 768px) {\n.scrollbar-toggle-container[data-v-90c9a322] {\r\n    bottom: 15px;\r\n    right: 15px;\n}\n.scrollbar-toggle-btn[data-v-90c9a322] {\r\n    width: 45px;\r\n    height: 45px;\n}\n.icon[data-v-90c9a322] {\r\n    width: 20px;\r\n    height: 20px;\n}\n}\r\n\r\n/* 确保按钮在所有页面都可见 */\n.scrollbar-toggle-btn[data-v-90c9a322] {\r\n  backdrop-filter: blur(10px);\r\n  -webkit-backdrop-filter: blur(10px);\n}\r\n/*$vite$:1*/";
   document.head.appendChild(__vite_style__);
   /**
   * @vue/shared v3.5.16
@@ -6364,14 +6365,6 @@ var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "sy
       };
     }
   });
-  const hidden = "_hidden_1s5zx_73";
-  const icon = "_icon_1s5zx_89";
-  const style0 = {
-    "scrollbar-toggle-container": "_scrollbar-toggle-container_1s5zx_3",
-    "scrollbar-toggle-btn": "_scrollbar-toggle-btn_1s5zx_19",
-    hidden,
-    icon
-  };
   const _export_sfc = (sfc, props) => {
     const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props) {
@@ -6379,10 +6372,7 @@ var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "sy
     }
     return target;
   };
-  const cssModules = {
-    "$style": style0
-  };
-  const ScrollbarToggle = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__cssModules", cssModules], ["__scopeId", "data-v-ac3b82da"]]);
+  const ScrollbarToggle = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-90c9a322"]]);
   const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     __name: "Entry",
     setup(__props) {
